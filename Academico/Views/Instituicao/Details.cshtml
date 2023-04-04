@@ -1,13 +1,12 @@
 ﻿@model Academico.Models.Instituicao
 
 @{
-    ViewData["Title"] = "Excluir";
+    ViewData["Title"] = "Detalhes da Instituição";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<h3>Você tem certeza que deseja excluir a instituição selecionada ?</h3>
 <div>
     <h4>Instituicao</h4>
     <hr />
@@ -31,9 +30,8 @@
             @Html.DisplayFor(model => model.Endereco)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Confirmar" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar para a lista de instituições</a>
-    </form>
+</div>
+<div>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Voltar para a lista de instituições</a>
 </div>
